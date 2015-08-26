@@ -18,7 +18,7 @@
 <script type="text/html" id="tmpl-shortcode-ui-field-text">
 	<div class="field-block">
 		<label for="{{ data.id }}">{{ data.label }}</label>
-		<input type="text" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value }}" {{{ data.meta }}}/>
+		<input type="text" class="regular-text" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value }}" {{{ data.meta }}}/>
 		<# if ( typeof data.description == 'string' ) { #>
 			<p class="description">{{ data.description }}</p>
 		<# } #>
@@ -89,7 +89,7 @@
 <script type="text/html" id="tmpl-shortcode-ui-field-email">
 	<div class="field-block">
 		<label for="{{ data.id }}">{{ data.label }}</label>
-		<input type="email" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value}}" {{{ data.meta }}}/>
+		<input type="email" class="regular-text" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value}}" {{{ data.meta }}}/>
 		<# if ( typeof data.description == 'string' ) { #>
 			<p class="description">{{ data.description }}</p>
 		<# } #>
@@ -99,7 +99,7 @@
 <script type="text/html" id="tmpl-shortcode-ui-field-number">
 	<div class="field-block">
 		<label for="{{ data.id }}">{{ data.label }}</label>
-		<input type="number" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value}}" {{{ data.meta }}}/>
+		<input type="number" class="regular-text" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value}}" {{{ data.meta }}}/>
 		<# if ( typeof data.description == 'string' ) { #>
 			<p class="description">{{ data.description }}</p>
 		<# } #>
@@ -130,6 +130,19 @@
 	<div class="field-block">
 		<label for="inner_content">{{ data.label }}</label>
 		<textarea id="inner_content" name="inner_content" class="content-edit" {{{ data.meta }}}>{{ data.value }}</textarea>
+		<# if ( typeof data.description == 'string' ) { #>
+			<p class="description">{{ data.description }}</p>
+		<# } #>
+	</div>
+</script>
+
+<script type="text/html" id="tmpl-shortcode-ui-field-range">
+	<div class="field-block">
+		<label for="{{ data.id }}">{{ data.label }}</label>
+		<div class="field-range-container">
+			<input type="range" name="{{ data.attr }}" id="{{ data.id }}" value="{{ data.value}}" {{{ data.meta }}} />
+			<output class="range" for="{{ data.id }}" id="{{ data.id }}_indicator">{{ data.value }}</output>
+		</div>
 		<# if ( typeof data.description == 'string' ) { #>
 			<p class="description">{{ data.description }}</p>
 		<# } #>
