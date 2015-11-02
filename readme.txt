@@ -25,6 +25,13 @@ Once you've done so, you'll need to [register the UI for your code](https://gith
 
 New in 0.4.0 is the ability to [attach javascript functions to event attribute updates](https://github.com/fusioneng/Shortcake/wiki/Event-Attribute-Callbacks). Action hooks can be used to dynamically show or hide a field based on the value of another, or to implement custom validation rules.
 
+== Frequently Asked Questions ==
+
+= How do I register UI for arbitrary key=>value pairs as shortcode attributes? =
+
+Shortcake doesn't support custom key=>value pairs as shortcode attributes because it isn't a great user experience.
+
+
 == Screenshots ==
 
 1. Without Shortcake, shortcodes have a minimal UI.
@@ -43,6 +50,13 @@ We've removed the compatibility shim for the `placeholder` attribute argument. Y
 We've removed the compatibility shim for the magical `content` attribute. If you were using this to support editing inner content, you'll need to change your UI registration to use `inner_content`.
 
 == Changelog ==
+
+= 0.6.0 (???) =
+* Core integration: Fully support PHP 5.2.
+* Defines a `SHORTCODE_UI_DOING_PREVIEW` constant when rendering a shortcode preview, which enables callbacks to serve a different representation of the shortcode in TinyMCE.
+* Added Danish translation.
+* Added Italian translation.
+* When an attachment is already selected for a shortcode attribute, opening media library will include it selected.
 
 = 0.5.0 (August 26, 2015) =
 * Attachment field: Made it easier to change the attachment by clicking on the thumbnail; added attachment metadata in the field view.
